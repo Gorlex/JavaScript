@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Full Stack</title>
+
+	<style type="text/css">
+		
+		.cls-border {
+			border: 1px solid black;
+			margin: 10px;
+			padding:10px;
+		}
+	</style>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="service.js"></script>
+	<script src="main.js"></script>
+</head>
+<!-- Se insertan los parametros de angular en el body: ng -->
+<body ng-app="app" ng-controller="ctrlMain as cd" > <!-- al ctrlMain se le agrega un: "as <nombre>" en este caso el nombre es cd -->
+	<!-- {{saluda}} -->
+
+<!-- Se crean cuadros de texto -->
+
+	<input type="text" name="" ng-model="numero1">
+	<input type="text" name="" ng-model="numero2">
+
+<!-- Se inserta un boton para enviar los datos al controlador llamado cd -->
+<button ng-click="cd.calcular(numero1,numero2)">Calcular</button>
+<br>
+{{cd.resultado}}
+
+	<br>
+
+<!-- Crear ingreso numero a multiplcar -->
+
+<input type="input" name="" ng-model="tabla">
+
+<!-- Boton para generar las tablas de multiplicar -->
+
+<button ng-click=cd.multiplicar(tabla)>Multiplicar</button><br>
+
+<!-- Mostrar las tablas de multiplicar -->
+Tu tabla es:
+<div ng-repeat="data in cd.datos">
+	
+	Mult: {{data.a}}*{{data.b}}={{data.c}}<br>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <div ng-repeat="data in informacion.data" class="col-md-11 cls-border ">
+		<div class="col-md-4">
+			<img src="https://casacolombiana.com/{{data.fotografia}}" class="img-responsive">
+		</div>
+		<div class="col-md-8">
+
+			<br> {{data.titulo}} <br>
+			<br> {{data.descripcion}} <br>
+			<br> {{data.elaboracion}} <br>
+			<br> {{data.prices[0].valorfin}} <br>
+		</div>
+	</div> -->
+</body>
+</html>
